@@ -49,23 +49,20 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
+        <Link href="/" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
+            Home
+          </Link>
           <Link href="/meaning" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Meaning
           </Link>
           <Link href="/meaning/love" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Love
           </Link>
-          <Link href="/career" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
+          <Link href="/meaning/career" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Career
           </Link>
-          <Link href="/wealth" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
-            Wealth
-          </Link>
-          <Link href="/spiritual" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
-            Spiritual
-          </Link>
-          <Link href="/blog" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
-            Blog
+          <Link href="/meaning/money" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
+            Money
           </Link>
           <Link href="/personal-reading" className="ml-2 bg-gradient-to-r from-mystical-600 to-accent-600 hover:from-mystical-700 hover:to-accent-700 text-white px-5 py-2 rounded-full text-sm font-medium tracking-wider transform transition-all hover:-translate-y-0.5 hover:shadow-lg border border-white/10">
             Get Reading
@@ -108,6 +105,13 @@ const Header = () => {
               <span className="text-2xl text-mystical-400 font-semibold">Angel Number</span>
             </div>
             <Link 
+              href="/" 
+              className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
               href="/meaning" 
               className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
               onClick={() => setIsMenuOpen(false)}
@@ -122,33 +126,20 @@ const Header = () => {
               Love
             </Link>
             <Link 
-              href="/career" 
+              href="/meaning/career" 
               className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Career
             </Link>
             <Link 
-              href="/wealth" 
+              href="/meaning/money" 
               className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Wealth
+              Money
             </Link>
-            <Link 
-              href="/spiritual" 
-              className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Spiritual
-            </Link>
-            <Link 
-              href="/blog" 
-              className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </Link>
+           
             <Link 
               href="/personal-reading" 
               className="mt-4 bg-gradient-to-r from-mystical-600 to-accent-600 text-white px-8 py-3 rounded-full font-bold hover:from-mystical-700 hover:to-accent-700 transition-all transform hover:-translate-y-0.5 border border-white/10"
