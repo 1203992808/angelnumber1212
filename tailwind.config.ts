@@ -62,13 +62,32 @@ const config: Config = {
           900: '#0f172a',
           950: '#020617',
         },
+        gray: {
+          900: "#171923",
+          950: "#0A0B13",
+        },
+        purple: {
+          400: "#9F7AEA",
+          500: "#805AD5",
+          600: "#6B46C1",
+        },
+        blue: {
+          500: "#4299E1",
+          600: "#3182CE",
+          900: "#2A4365",
+          950: "#1A365D",
+        },
+        yellow: {
+          300: "#FAF089",
+          400: "#F6E05E",
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'cosmic-pattern': 'url("/cosmic-pattern.png")',
       },
-      typography: (theme) => ({
+      typography: (theme: any) => ({
         invert: {
           css: {
             '--tw-prose-body': theme('colors.dark.200'),
@@ -87,6 +106,34 @@ const config: Config = {
             '--tw-prose-pre-bg': theme('colors.dark.800'),
             '--tw-prose-th-borders': theme('colors.dark.600'),
             '--tw-prose-td-borders': theme('colors.dark.700'),
+          },
+        },
+        DEFAULT: {
+          css: {
+            h1: {
+              color: theme('colors.white'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h2: {
+              color: theme('colors.white'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            h3: {
+              color: theme('colors.white'),
+              fontFamily: theme('fontFamily.serif'),
+            },
+            p: {
+              color: theme('colors.white'),
+            },
+            a: {
+              color: theme('colors.yellow.300'),
+            },
+            strong: {
+              color: theme('colors.yellow.300'),
+            },
+            li: {
+              color: theme('colors.white'),
+            },
           },
         },
       }),

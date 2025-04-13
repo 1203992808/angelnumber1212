@@ -72,3 +72,14 @@ npm run build
 ## 许可证
 
 [MIT](LICENSE)
+
+## Personalized Angel Number 1212 Reading Feature
+
+The website includes a personalized reading feature that uses Google's Gemini AI to generate custom interpretations of the angel number 1212 based on user inputs. To enable this feature:
+
+1. Create a `.env.local` file in the root directory
+2. Copy the contents of `.env.example` to `.env.local`
+3. Replace `your_api_key_here` with your actual Google Gemini API key from [Google AI Studio](https://ai.google.dev/)
+4. Uncomment the Gemini API code in `src/app/api/generate-reading/route.ts`
+
+This feature allows users to get personalized spiritual guidance based on their age, gender, and specific life areas they'd like guidance on.
