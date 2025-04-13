@@ -52,8 +52,8 @@ const Header = () => {
           <Link href="/meaning" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Meaning
           </Link>
-          <Link href="/relationships" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
-            Relationships
+          <Link href="/meaning/love" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
+            Love
           </Link>
           <Link href="/career" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Career
@@ -115,11 +115,11 @@ const Header = () => {
               Meaning
             </Link>
             <Link 
-              href="/relationships" 
+              href="/meaning/love" 
               className="text-xl text-white hover:text-gold-300 transition-colors font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
-              Relationships
+              Love
             </Link>
             <Link 
               href="/career" 

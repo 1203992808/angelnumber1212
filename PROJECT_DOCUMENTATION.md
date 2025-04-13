@@ -29,12 +29,12 @@ The 1212 Angel Number website aims to be a comprehensive resource for people see
      - Dual energy of 1+2 (`/meaning/dual-energy`)
      - Relationship with other angel numbers (`/meaning/related-numbers`)
 
-3. **Relationships (`/relationships`)**
+3. **Love (`/Love`)**
    - How 1212 influences personal connections
    - Subsections:
-     - Love and romance (`/relationships/love`)
-     - Family ties (`/relationships/family`)
-     - Twin flames and soulmates (`/relationships/twin-flames`)
+     - Love and romance (`/Love/love`)
+     - Family ties (`/Love/family`)
+     - Twin flames and soulmates (`/Love/twin-flames`)
 
 4. **Career (`/career`)**
    - Career guidance related to 1212

@@ -65,7 +65,7 @@ const FeatureSection = () => {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent"></div>
-              <div className="absolute top-4 left-4 bg-gold-300 text-primary-900 rounded-full px-3 py-1 text-xs font-bold">RELATIONSHIPS</div>
+              <div className="absolute top-4 left-4 bg-gold-300 text-primary-900 rounded-full px-3 py-1 text-xs font-bold">LOVE</div>
             </div>
             <div className="p-8 border-t border-primary-50">
               <h3 className="text-2xl font-bold text-gray-900 mb-3">Love & Connection</h3>
@@ -74,7 +74,7 @@ const FeatureSection = () => {
                 Discover how this powerful number can transform your relationships and deepen your capacity for authentic love.
               </p>
               <Link 
-                href="/relationships/love" 
+                href="/meaning/love" 
                 className="group inline-flex items-center text-mystical-600 font-semibold transition-all hover:text-mystical-700"
               >
                 <span className="border-b border-transparent group-hover:border-mystical-600 transition-all">Explore Love Meaning</span>
