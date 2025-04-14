@@ -14,7 +14,25 @@ export async function POST(request: NextRequest) {
     // Initialize Gemini API
     const genAI = new GoogleGenerativeAI(API_KEY);
     
-    // Get the model
+    // Test the API connection with a simple prompt first
+    try {
+      console.log('Testing API connection...');
+      const testModel = genAI.getGenerativeModel({ model: "gemini-pro" });
+      
+      // Very simple prompt to test API
+      const testPrompt = "Hello, can you respond with just the word 'Connected' to verify API connectivity?";
+      const testResult = await testModel.generateContent(testPrompt);
+      const testResponse = await testResult.response;
+      console.log('API test successful. Response:', testResponse.text());
+    } catch (testError) {
+      console.error('API test failed:', testError);
+      console.error('This indicates a problem with the API key or connectivity');
+      
+      // If test fails, throw error to trigger fallback
+      throw new Error('API connectivity test failed: ' + (testError instanceof Error ? testError.message : 'Unknown error'));
+    }
+    
+    // Get the model for the actual reading
     console.log('Initializing Gemini model...');
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     
@@ -27,18 +45,8 @@ export async function POST(request: NextRequest) {
       // Log prompt length for debugging
       console.log('Prompt length:', personalizedPrompt.length, 'characters');
       
-      // Generate content with safety settings and temperature
-      const generationConfig = {
-        temperature: 0.7,
-        topK: 40,
-        topP: 0.95,
-        maxOutputTokens: 8192,
-      };
-      
-      const result = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: personalizedPrompt }]}],
-        generationConfig,
-      });
+      // 使用最简单的API调用方式
+      const result = await model.generateContent(personalizedPrompt);
       
       const response = await result.response;
       const reading = response.text();
@@ -50,7 +58,22 @@ export async function POST(request: NextRequest) {
         reading: reading 
       });
     } catch (genaiError) {
-      console.error('Error with Gemini API details:', JSON.stringify(genaiError, null, 2));
+      // 更详细地记录错误
+      console.error('Error with Gemini API:', genaiError);
+      console.error('Error type:', typeof genaiError);
+      console.error('Error message:', genaiError instanceof Error ? genaiError.message : 'Unknown error');
+      console.error('Error stack:', genaiError instanceof Error ? genaiError.stack : 'No stack trace');
+      console.error('Error stringified:', JSON.stringify(genaiError, Object.getOwnPropertyNames(genaiError), 2));
+      
+      // 尝试访问特定的错误属性
+      if (genaiError instanceof Error) {
+        const errorObj = {
+          name: genaiError.name,
+          message: genaiError.message,
+          stack: genaiError.stack
+        };
+        console.error('Error object details:', JSON.stringify(errorObj, null, 2));
+      }
       
       // Fallback to mock reading if API fails
       console.log('Falling back to mock reading due to API error');
@@ -59,7 +82,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ 
         success: true, 
         reading: mockReading,
-        isMock: true
+        isMock: true,
+        error: genaiError instanceof Error ? genaiError.message : 'API error occurred'
       });
     }
   } catch (error) {
