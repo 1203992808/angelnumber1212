@@ -41,7 +41,7 @@ The 1212 Angel Number website aims to be a comprehensive resource for people see
    - Work opportunities and challenges
    - Professional development insights
 
-5. **Wealth (`/wealth`)**
+5. **Wealth (`/money`)**
    - Financial implications of 1212
    - Abundance mindset
    - Practical money advice connected to 1212 energy

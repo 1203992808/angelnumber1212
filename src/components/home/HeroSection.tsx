@@ -85,11 +85,11 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <Link 
-                href="/meaning" 
+                href="/personal-reading" 
                 className="group bg-gradient-to-r from-mystical-600 to-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_15px_25px_-10px_rgba(124,58,237,0.5)] hover:shadow-[0_20px_35px_-15px_rgba(124,58,237,0.6)] transition-all transform hover:-translate-y-1 hover:scale-105 border border-white/10 relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  Explore Meaning
+                  Get Personal Reading
                   <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
                   </svg>
@@ -98,11 +98,11 @@ const HeroSection = () => {
               </Link>
               
               <Link 
-                href="/personal-reading" 
+                href="/meaning" 
                 className="group bg-transparent text-white border-2 border-white/30 hover:border-gold-300 hover:text-gold-300 px-8 py-4 rounded-full font-bold text-lg transition-all hover:-translate-y-1 backdrop-blur-sm"
               >
                 <span className="flex items-center justify-center">
-                  Get Personal Reading
+                  Explore Meaning
                   <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
                   </svg>
