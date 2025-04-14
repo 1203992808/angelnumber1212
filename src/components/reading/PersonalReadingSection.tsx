@@ -34,15 +34,32 @@ const PersonalReadingSection = () => {
     });
 
     try {
-      // Generate a mock reading directly (no API call)
-      setTimeout(() => {
-        const mockReading = generateMockReading(formData);
-        setReadingResponse({
-          reading: mockReading,
-          loading: false,
-          error: null,
-        });
-      }, 1500);
+      // Call the API to get a personalized reading
+      const response = await fetch('/api/generate-reading', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formData
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      
+      if (data.isMock) {
+        console.log('Warning: Received mock data instead of AI-generated reading');
+      }
+      
+      setReadingResponse({
+        reading: data.reading,
+        loading: false,
+        error: null,
+      });
     } catch (error) {
       console.error("Error generating reading:", error);
       setReadingResponse({

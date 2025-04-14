@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export type ReadingFormData = {
+  name: string;
   age: string;
   birthDate: string;
   gender: string;
@@ -17,6 +18,7 @@ type ReadingFormProps = {
 
 const ReadingForm = ({ onSubmit, isLoading }: ReadingFormProps) => {
   const [formData, setFormData] = useState<ReadingFormData>({
+    name: "",
     age: "",
     birthDate: "",
     gender: "Female",
@@ -100,6 +102,20 @@ const ReadingForm = ({ onSubmit, isLoading }: ReadingFormProps) => {
       <div className="mb-8">
         <h3 className="text-xl text-white font-semibold mb-2">Personal Information</h3>
         <div className="h-1 w-16 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-full"></div>
+      </div>
+      
+      <div className="space-y-2">
+        <label htmlFor="name" className="block text-white/90 text-sm font-medium">
+          Your Name <span className="text-white/50">(Optional)</span>
+        </label>
+        <input
+          id="name"
+          type="text"
+          value={formData.name}
+          onChange={(e) => handleInputChange("name", e.target.value)}
+          placeholder="Your name"
+          className="w-full px-4 py-3 bg-gray-900/50 border border-white/10 focus:border-yellow-300 rounded-lg text-white placeholder-white/40 outline-none transition-all focus:ring-2 focus:ring-yellow-300/30"
+        />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
