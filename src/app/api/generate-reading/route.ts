@@ -24,7 +24,22 @@ export async function POST(request: NextRequest) {
     // Generate content
     console.log('Sending request to Gemini API...');
     try {
-      const result = await model.generateContent(personalizedPrompt);
+      // Log prompt length for debugging
+      console.log('Prompt length:', personalizedPrompt.length, 'characters');
+      
+      // Generate content with safety settings and temperature
+      const generationConfig = {
+        temperature: 0.7,
+        topK: 40,
+        topP: 0.95,
+        maxOutputTokens: 8192,
+      };
+      
+      const result = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: personalizedPrompt }]}],
+        generationConfig,
+      });
+      
       const response = await result.response;
       const reading = response.text();
       
@@ -35,7 +50,7 @@ export async function POST(request: NextRequest) {
         reading: reading 
       });
     } catch (genaiError) {
-      console.error('Error with Gemini API:', genaiError);
+      console.error('Error with Gemini API details:', JSON.stringify(genaiError, null, 2));
       
       // Fallback to mock reading if API fails
       console.log('Falling back to mock reading due to API error');
@@ -60,42 +75,22 @@ export async function POST(request: NextRequest) {
 function generatePersonalizedPrompt(formData: any) {
   const { readingType, age, gender, name, additionalInfo } = formData;
   
-  let prompt = `You are a deeply experienced spiritual guide who specializes in angel number interpretations, particularly the number 1212. Please create a profoundly personalized angel number 1212 reading for a ${age}-year-old ${gender.toLowerCase()} named ${name || "the seeker"}.
+  // Create a shorter, more focused prompt
+  let prompt = `As an angel number interpreter specializing in 1212, create a personalized reading for a ${age}-year-old ${gender.toLowerCase()} named ${name || "the seeker"} focused on ${readingType}.
 
-This person is specifically interested in how 1212 relates to their: ${readingType}
+${additionalInfo ? `Context from the seeker: "${additionalInfo}"` : ""}
 
-${additionalInfo ? `They have shared the following personal context that MUST be thoroughly integrated into every aspect of the reading: "${additionalInfo}"` : ""}
+Create a comprehensive reading with these sections:
+1. Title - Create an engaging title for this reading
+2. Symbolism - Explain 1212's meaning in relation to their situation
+3. Personal Message - Personalized interpretation of what 1212 means for them now
+4. Challenges - What challenges they may be facing
+5. Practices - Specific spiritual practices to help them (at least 4)
+6. Recommendations - Practical advice tailored to their situation (at least 6)
+7. Affirmations - Personalized affirmations for their journey
+8. Action Steps - Clear, actionable steps they can take
 
-Your reading must be truly in-depth, personalized, and have these characteristics:
-1. Comprehensive: Thoroughly analyze all possible meanings of 1212 appearing in the seeker's life, including both surface-level interpretations and deeper spiritual significance
-2. Precise: Provide genuinely targeted insights based on the seeker's age, gender, and specific situation, rather than generic explanations
-3. Transformative: The reading should be revelatory and empowering, helping the seeker recognize patterns and opportunities they may not be aware of
-4. Practical: Offer concrete, detailed advice that can be immediately implemented, not abstract or vague guidance
-
-The reading MUST contain the following detailed sections:
-1. [Title]: Create an engaging title specifically for this reading
-2. [Numerical Symbolism]: Explain in detail the numerological meaning of 1212, particularly its specific connection to the seeker's current situation
-3. [Current Life Stage Analysis]: Provide a deep analysis of the seeker's present life stage, especially the unique connection between their age and angel number 1212
-4. [Hidden Significance Revealed]: Uncover potentially undiscovered messages or guidance that 1212 may be bringing to the seeker's life
-5. [Challenges Faced]: Very specifically analyze challenges the seeker may be experiencing, with extraordinary attention to detail and relevance
-6. [Spiritual Practices]: Provide at least 5 highly specific, step-by-step spiritual practices, ensuring each has detailed implementation methods
-7. [Personalized Affirmations]: Create at least 6 affirmation statements highly relevant to the seeker's current situation
-8. [Specific Recommendations]: Offer at least 8 highly targeted recommendations that are very specific, immediately actionable, and suitable for the seeker's age, gender, and life circumstances
-9. [Deep Spiritual Insights]: Provide deeper spiritual insights that go beyond surface interpretations, touching on soul-level growth
-10. [21-Day Action Plan]: Develop a detailed 21-day action plan with specific tasks and reflection exercises for each day
-11. [Timeline Guidance]: Describe in detail potential changes and opportunities in the next 3 months, 6 months, and 1 year
-12. [Potential Pitfall Warnings]: Point out traps and misconceptions the seeker might face at this stage of spiritual development, and how to avoid them
-13. [Connections to Other Numbers]: If the seeker has been seeing other numbers recently, explain how these numbers relate to 1212
-
-Formatting requirements:
-- Use markdown formatting to create a clearly structured but spiritually resonant document
-- Use second and third-level headings to organize content clearly
-- Use bold and italic text to emphasize important points where appropriate
-- Create ordered and unordered lists for important practices and recommendations
-- Use block quotes to highlight essential spiritual information
-- Ensure the overall tone is both professional and warm, inspirational
-
-This reading should feel completely tailored to this specific seeker, be empathetic, and inspire genuine inner transformation. It should contain both profound spiritual wisdom and actionable practical advice. Your goal is to create a reading experience that can truly change the seeker's life.`;
+Format using markdown with headings, bullet points, and emphasis where appropriate. Make the reading feel personally tailored to this individual with practical advice they can immediately implement.`;
   
   return prompt;
 }
