@@ -34,7 +34,7 @@ const Footer = () => {
       </div>
       
       <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Site Logo & Description */}
           <div className="col-span-1 md:col-span-1 lg:col-span-1">
             <Link href="/" className="flex items-center mb-4">
@@ -72,85 +72,42 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-300">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/meaning" className="text-indigo-200 hover:text-white transition-colors">
+                <Link href="/meaning" className="text-indigo-200 hover:text-white transition-colors hover:scale-105 transform duration-200 flex items-center">
+                  <span className="mr-2 text-violet-400">•</span>
                   Meaning
                 </Link>
               </li>
               <li>
-                <Link href="/relationships" className="text-indigo-200 hover:text-white transition-colors">
-                  Relationships
+                <Link href="/meaning/love" className="text-indigo-200 hover:text-white transition-colors hover:scale-105 transform duration-200 flex items-center">
+                  <span className="mr-2 text-violet-400">•</span>
+                  Love
                 </Link>
               </li>
               <li>
-                <Link href="/career" className="text-indigo-200 hover:text-white transition-colors">
+                <Link href="/meaning/career" className="text-indigo-200 hover:text-white transition-colors hover:scale-105 transform duration-200 flex items-center">
+                  <span className="mr-2 text-violet-400">•</span>
                   Career
                 </Link>
               </li>
               <li>
-                <Link href="/wealth" className="text-indigo-200 hover:text-white transition-colors">
+                <Link href="/meaning/money" className="text-indigo-200 hover:text-white transition-colors hover:scale-105 transform duration-200 flex items-center">
+                  <span className="mr-2 text-violet-400">•</span>
                   Wealth
                 </Link>
               </li>
-              <li>
-                <Link href="/spiritual" className="text-indigo-200 hover:text-white transition-colors">
-                  Spiritual
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Other Resources */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-300">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/blog" className="text-indigo-200 hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/personal-reading" className="text-indigo-200 hover:text-white transition-colors">
-                  Personal Reading
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-indigo-200 hover:text-white transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-indigo-200 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-indigo-200 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-1 md:col-span-3 lg:col-span-1">
-            <h3 className="text-lg font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-300">Newsletter</h3>
-            <p className="text-indigo-200 text-sm mb-4">
-              Get the latest angel number insights and spiritual guidance delivered straight to your inbox.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-2 bg-indigo-900/50 backdrop-blur-sm text-white rounded-full border border-indigo-700/50 focus:outline-none focus:ring-2 focus:ring-violet-400 flex-grow transition-all duration-300"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white px-4 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-glow"
-              >
-                Subscribe
-              </button>
-            </form>
+          {/* Decorative Element */}
+          <div className="col-span-1 flex justify-center items-center">
+            <div className="relative w-40 h-40">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-indigo-800/20 rounded-full animate-pulse"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-violet-600/10 to-indigo-800/10 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute inset-4 bg-gradient-to-br from-violet-600/5 to-indigo-800/5 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute inset-0 flex justify-center items-center">
+                <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-300">1212</div>
+              </div>
+            </div>
           </div>
         </div>
 
