@@ -28,29 +28,28 @@ const FeatureSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Spiritual Meaning */}
+          {/* Money & Wealth */}
           <div className="bg-dark-900/80 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/5 hover:border-white/10">
             <div className="relative h-64 overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1518134346374-184f9d21cea2?q=80&w=600&h=500&auto=format&fit=crop"
-                alt="Spiritual Meaning"
+                src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&h=500&auto=format&fit=crop"
+                alt="Money and Wealth"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 to-primary-900/30"></div>
-              <div className="absolute top-4 left-4 bg-gold-300 text-primary-900 rounded-full px-3 py-1 text-xs font-bold">SPIRITUAL</div>
+              <div className="absolute top-4 left-4 bg-gold-300 text-primary-900 rounded-full px-3 py-1 text-xs font-bold">WEALTH</div>
             </div>
             <div className="p-8 border-t border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-3">Spiritual Awakening</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Financial Abundance</h3>
               <p className="text-white/80 mb-6 leading-relaxed">
-                Angel number 1212 heralds a profound spiritual awakening, illuminating your connection to higher consciousness
-                and divine guidance. It's a cosmic reminder to align with your soul's authentic purpose.
+                Angel number 1212 reveals powerful financial insights, guiding you toward prosperity and abundance. It signals divine alignment with wealth creation and shows the path to financial freedom through balance and inspired action.
               </p>
               <Link 
-                href="/meaning/spiritual" 
+                href="/meaning/money" 
                 className="group inline-flex items-center text-gold-300 font-semibold transition-all hover:text-gold-400"
               >
-                <span className="border-b border-transparent group-hover:border-gold-300 transition-all">Explore Spiritual Meaning</span>
+                <span className="border-b border-transparent group-hover:border-gold-300 transition-all">Explore Money Meaning</span>
                 <svg className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
                 </svg>
@@ -107,7 +106,7 @@ const FeatureSection = () => {
                 Learn how to harness this energy to manifest abundance and professional fulfillment.
               </p>
               <Link 
-                href="/career" 
+                href="/meaning/career" 
                 className="group inline-flex items-center text-gold-300 font-semibold transition-all hover:text-gold-400"
               >
                 <span className="border-b border-transparent group-hover:border-gold-300 transition-all">Explore Career Guidance</span>
