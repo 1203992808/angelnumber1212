@@ -5,7 +5,7 @@ import Image from "next/image";
 import ReadingForm from "./ReadingForm";
 import ReadingResult from "./ReadingResult";
 import { ReadingFormData } from "./ReadingForm";
-import { generateReading } from "@/lib/readingTemplates";
+// import { generateReading } from "@/lib/readingTemplates";
 
 type ReadingResponse = {
   reading: string;
@@ -38,7 +38,28 @@ const PersonalReadingSection = () => {
       // Use a timeout to simulate processing and create a better UX
       setTimeout(() => {
         // Generate reading from templates instead of API call
-        const reading = generateReading(formData, currentDate);
+        // const reading = generateReading(formData, currentDate);
+        
+        // Temporary mock reading
+        const reading = `# Your 1212 Angel Number Reading
+        
+## Personal Insights for ${formData.name || "You"}
+
+The angel number 1212 has appeared in your life at this critical moment. As a ${formData.age}-year-old ${formData.gender.toLowerCase()}, you're being called to embrace new beginnings while maintaining balance in your ${formData.readingType} life.
+
+This is a placeholder reading that will be replaced with a more personalized one in the future.
+
+### Recommendations:
+- Take time for self-reflection
+- Embrace change with an open heart
+- Trust your intuition
+- Practice gratitude daily
+
+### Affirmations:
+- I am aligned with my highest purpose
+- I attract positive opportunities
+- I release what no longer serves me
+- I am worthy of abundance in all forms`;
         
         setReadingResponse({
           reading,
