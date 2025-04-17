@@ -48,7 +48,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-8">
         <Link href="/" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Home
           </Link>
@@ -63,9 +63,6 @@ const Header = () => {
           </Link>
           <Link href="/meaning/money" className="text-white/90 hover:text-gold-300 transition-colors font-medium text-sm uppercase tracking-wider py-2 px-1 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gold-300 hover:after:w-full after:transition-all after:duration-300">
             Money
-          </Link>
-          <Link href="/personal-reading" className="ml-2 bg-gradient-to-r from-mystical-600 to-accent-600 hover:from-mystical-700 hover:to-accent-700 text-white px-5 py-2 rounded-full text-sm font-medium tracking-wider transform transition-all hover:-translate-y-0.5 hover:shadow-lg border border-white/10">
-            Get Reading
           </Link>
         </nav>
 
@@ -140,13 +137,6 @@ const Header = () => {
               Money
             </Link>
            
-            <Link 
-              href="/personal-reading" 
-              className="mt-4 bg-gradient-to-r from-mystical-600 to-accent-600 text-white px-8 py-3 rounded-full font-bold hover:from-mystical-700 hover:to-accent-700 transition-all transform hover:-translate-y-0.5 border border-white/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get Personal Reading
-            </Link>
           </nav>
         </div>
       )}

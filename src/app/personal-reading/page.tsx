@@ -46,7 +46,7 @@ export default function PersonalReadingPage() {
           </div>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-serif">
-            该功能升级中，暂不可用
+            This feature is being upgraded and currently unavailable
           </h1>
           
           <p className="text-xl text-white/80 mb-10">
