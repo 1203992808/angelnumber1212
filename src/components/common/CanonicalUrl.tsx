@@ -17,9 +17,12 @@ const CanonicalUrl = () => {
     // Handle the homepage (/) specially to avoid double slashes
     const canonicalPath = pathname === '/' ? '' : pathname;
     
+    // Get the current host from window.location instead of hardcoding
+    const currentHost = window.location.origin;
+    
     const link = document.createElement('link');
     link.setAttribute('rel', 'canonical');
-    link.setAttribute('href', `https://1212angelnumber.pro${canonicalPath}`);
+    link.setAttribute('href', `${currentHost}${canonicalPath}`);
     document.head.appendChild(link);
     
     return () => {
